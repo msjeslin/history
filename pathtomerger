@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Path to Merger</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+            padding: 20px; 
+            background: url('background.jpg') no-repeat center center fixed; 
+            background-size: cover; 
+            color: white;
+        }
+        .choice { 
+            margin: 10px; 
+            padding: 15px; 
+            border: 2px solid white; 
+            cursor: pointer; 
+            display: inline-block; 
+            background-color: rgba(0, 0, 0, 0.7); 
+            transition: 0.3s; 
+        }
+        .choice:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        #story-box {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <audio id="bg-music" loop>
+        <source src="background-music.mp3" type="audio/mpeg">
+    </audio>
+    <h1>Path to Merger</h1>
+    <div id="story-box">
+        <p id="story">It's 1959. Singapore has gained self-governance. What should the government focus on?</p>
+    </div>
+    <div id="choices">
+        <div class="choice" onclick="chooseOption('economy')">Focus on Economic Growth</div>
+        <div class="choice" onclick="chooseOption('merger')">Start Discussing Merger with Malaya</div>
+    </div>
+    <script>
+        let bgMusic = document.getElementById('bg-music');
+        bgMusic.play();
+        
+        function chooseOption(choice) {
+            let storyText = document.getElementById('story');
+            let choicesDiv = document.getElementById('choices');
+            
+            if (choice === 'economy') {
+                storyText.innerText = "The economy improves, but political instability grows. Do you push for merger now?";
+                choicesDiv.innerHTML = '<div class="choice" onclick="chooseOption(\'push_merger\')">Push for Merger</div>' +
+                                      '<div class="choice" onclick="chooseOption(\'delay\')">Delay Merger Talks</div>';
+            } else if (choice === 'merger') {
+                storyText.innerText = "Merger discussions begin, but opposition arises. Do you hold a referendum?";
+                choicesDiv.innerHTML = '<div class="choice" onclick="chooseOption(\'referendum\')">Hold a Referendum</div>' +
+                                      '<div class="choice" onclick="chooseOption(\'negotiate\')">Negotiate Further</div>';
+            } else if (choice === 'push_merger') {
+                storyText.innerText = "Merger happens, but tensions remain. You have completed the journey!";
+                choicesDiv.innerHTML = '';
+            } else if (choice === 'delay') {
+                storyText.innerText = "Delaying merger leads to internal conflict. Game over.";
+                choicesDiv.innerHTML = '';
+            } else if (choice === 'referendum') {
+                storyText.innerText = "The people vote in favor of merger! Singapore joins Malaysia in 1963.";
+                choicesDiv.innerHTML = '';
+            } else if (choice === 'negotiate') {
+                storyText.innerText = "Negotiations stall, and Singapore remains uncertain. Game over.";
+                choicesDiv.innerHTML = '';
+            }
+        }
+    </script>
+</body>
+</html>
