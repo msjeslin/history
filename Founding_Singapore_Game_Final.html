@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Founding Singapore: A Game of Choices</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; background-color: #f4f4f4; color: #222; padding: 20px; }
+    .important { color: darkred; font-weight: bold; }
+    .passage { margin-bottom: 2em; background: #fff; border-radius: 8px; padding: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .choice { display: block; margin: 10px 0; }
+    .trivia { background: #e9f5ff; padding: 10px; border-left: 4px solid #007acc; margin-top: 10px; }
+    img, audio { max-width: 100%; height: auto; }
+    .accessible-text { font-size: 1.2em; line-height: 1.6; }
+  </style>
+</head>
+<body>
+  <div class="passage">
+    <h1>Welcome to <span class="important">Founding Singapore: A Game of Choices</span></h1>
+    <p class="accessible-text">The year is 1819. You are a young advisor in the Straits, witnessing the birth of modern Singapore.</p>
+    <p class="accessible-text">Who will you assist?</p>
+    <a class="choice" href="#">Assist Stamford Raffles</a>
+    <a class="choice" href="#">Assist William Farquhar</a>
+    <a class="choice" href="#">Assist John Crawfurd</a>
+  </div>
+
+  <div class="passage">
+    <h2>🎉 Secret Trivia Unlocked!</h2>
+    <div class="trivia accessible-text">
+      Did you know? William Farquhar allowed gambling dens and later tried to regulate them instead of banning outright, reflecting his flexible governance style.
+    </div>
+  </div>
+
+  <div class="passage">
+    <h2>Embedded Visual</h2>
+    <img src="images/raffles_treaty.jpg" alt="Illustration of Raffles signing the treaty" />
+  </div>
+
+  <div class="passage">
+    <h2>Audio Confirmation</h2>
+    <audio controls autoplay>
+      <source src="audio/success.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+</body>
+</html>
